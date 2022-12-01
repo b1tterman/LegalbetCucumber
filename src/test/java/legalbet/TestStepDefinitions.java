@@ -76,8 +76,8 @@ public class TestStepDefinitions {
         count1 = Integer.parseInt(otzivyCount.getText());
         System.out.println("Количество отзывов: " + count1);
         String s = nameBukmeker.getAttribute("href");
-        String[] parts = s.split("https://legalbet.ru/bukmekerskye-kontory/");
-        System.out.println("Название букмекера '" + parts[1].substring(0, parts[1].length() - 1) + "'");
+        String[] parts = s.split("/");
+        System.out.println("Название букмекера '" + parts[4] + "'");
         lastBonus10k.click();
 
     }
