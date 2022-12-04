@@ -22,7 +22,6 @@ public class TestStepDefinitions {
     private final SelenideElement lastBonus10k = $x("(//div[@class='bonus ']//a[contains(text(), '10 000')]//ancestor-or-self::td)[last()]//following::td//a");
     private final SelenideElement otzivyCount = $x("(//div[@class='bonus ']//a[contains(text(), '10 000')]//ancestor-or-self::td)[last()]//following::td//a");
     private final SelenideElement nameBukmeker = $x("(//div[@class='bonus ']//a[contains(text(), '10 000')]//ancestor-or-self::td)[last()]//preceding-sibling::td//a");
-    //private final SelenideElement otzivyCountInside = $x("h2[@class='heading' and normalize-space(text()) = 'Отзывы']//span[@class='count']");
     private final SelenideElement otzivyCountInside = $x("//div[@class=\"feedbacks__header-count\"]");
 
 
@@ -71,8 +70,8 @@ public class TestStepDefinitions {
         legalnieBukmekeri.click();
     }
 
-    @And("Из списка букмекеров, у которых бонус {int}, выбрать последнего и запомнить количество отзывов. Логировать количество отзывов и название букмекера.")
-    public void chooseLast10kBukmekerAndReviewCount(int arg0) {
+    @And("Из списка букмекеров, у которых бонус 10000, выбрать последнего и запомнить количество отзывов. Логировать количество отзывов и название букмекера.")
+    public void chooseLast10kBukmekerAndReviewCount() {
         count1 = Integer.parseInt(otzivyCount.getText());
         System.out.println("Количество отзывов: " + count1);
         String s = nameBukmeker.getAttribute("href");
@@ -93,4 +92,5 @@ public class TestStepDefinitions {
     public void checkTwoReviewCounts() {
         org.junit.Assert.assertEquals(count1, count2);
     }
+
 }
