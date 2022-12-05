@@ -19,7 +19,6 @@ public class TestStepDefinitions {
 
     private final SelenideElement bukmekerMenu = $x("//li[@class=\"panel__item  panel__item_bookmakers\"]");
     private final SelenideElement legalnieBukmekeri = $x("//a[@href=\"/bukmekerskye-kontory/sets/legalnye-v-rossii/\"]");
-    private final SelenideElement lastBonus10k = $x("(//div[@class='bonus ']//a[contains(text(), '10 000')]//ancestor-or-self::td)[last()]//following::td//a");
     private final SelenideElement otzivyCount = $x("(//div[@class='bonus ']//a[contains(text(), '10 000')]//ancestor-or-self::td)[last()]//following::td//a");
     private final SelenideElement nameBukmeker = $x("(//div[@class='bonus ']//a[contains(text(), '10 000')]//ancestor-or-self::td)[last()]//preceding-sibling::td//a");
     private final SelenideElement otzivyCountInside = $x("//div[@class=\"feedbacks__header-count\"]");
@@ -77,7 +76,7 @@ public class TestStepDefinitions {
         String s = nameBukmeker.getAttribute("href");
         String[] parts = s.split("/");
         System.out.println("Название букмекера '" + parts[4] + "'");
-        lastBonus10k.click();
+        otzivyCount.click();
 
     }
 
